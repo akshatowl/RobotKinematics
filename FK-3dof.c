@@ -29,11 +29,11 @@ int main()
     printf("Enter 3 angle parameters\n");
     scanf("%f%f%f",&theta1,&theta2,&theta3);
 
-    if(theta2>0.0)    //finding out net angle with respect to coordinate frame
+    if(theta2>=0.0)    //finding out net angle with respect to coordinate frame
     {
         thetai1=theta1+theta2;
     }
-    else if(theta2==0.0)
+    else if(theta2>=180.0)
     {
         printf("INVALID\n");
     }
@@ -41,11 +41,11 @@ int main()
         thetai1=theta1-theta2;
     }
 
-    if(theta3>0.0)
+    if(theta3>=0.0)
     {
         thetai2=thetai1+theta3;
     }
-    else if(theta3==0.0)
+    else if(theta3>=180.0)
     {
         printf("INVALID\n");
     }
