@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<math.h>
 #define pi 3.14159265
-
+//Inverse Kinematics of a 2-dof RR robotic arm
 int main()
 {
 
@@ -34,7 +34,7 @@ int main()
     if(v<=1.0&&v>=-1.0)
     {
 
-        printf("End effector:%f",acosf(v)*180.0/pi);
+        printf("End effector:%f",(pi-acosf(v))*180.0/pi);
     }
     else{
         printf("INVALID");
