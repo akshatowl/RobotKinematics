@@ -30,17 +30,17 @@ int main()
     scanf("%f%f",&link1,&link2);
     printf("Enter the angles wrt frames desired\n");
     scanf("%f%f",&angle1,&angle2);
-    if(angle2>=0.00)       //angle2 wrt link1
+    if(angle2>=0.00&&angle2<180.00)       //angle2 wrt link1
     {
         angle3=angle1+angle2;  //angle3 is angle of link2 wrtxy (ease of computing
     }
-    else{
+    else if(angle2<0.00&&angle2>-180.00){
         angle3=angle1-angle2;
     }
 
-    if(angle2>=180.0) //impossible set
+    if(angle2>=180.00||angle2<=-180.00) //impossible set
     {
-        printf("NOT POSSIBLE CONFIG");
+        printf("IMPOSSIBLE CONFIG");
     }
     else{
     compute(angle1*pi/180.0,angle3*pi/180.0,&x,&y,link1,link2); //degree conversion
