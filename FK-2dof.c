@@ -26,6 +26,7 @@ void compute(float theta1,float theta2,float *x02,float *y02,float L1,float L2)
 int main()
 {
     float link1,link2,x,y,x1,y1,angle1,angle2,angle3;
+    int cond=0; //for printing
     printf("Enter the constant link length(2)\n");
     scanf("%f%f",&link1,&link2);
     printf("Enter the angles wrt frames desired\n");
@@ -33,19 +34,23 @@ int main()
     if(angle2>=0.00&&angle2<180.00)       //angle2 wrt link1
     {
         angle3=angle1+angle2;  //angle3 is angle of link2 wrtxy (ease of computing
+        cond++;
     }
     else if(angle2<0.00&&angle2>-180.00){
         angle3=angle1-angle2;
+        cond++;
     }
 
-    if(angle2>=180.00||angle2<=-180.00) //impossible set
+    else //impossible set
     {
         printf("IMPOSSIBLE CONFIG");
     }
-    else{
+    
+   if(cond==1)
+   {
     compute(angle1*pi/180.0,angle3*pi/180.0,&x,&y,link1,link2); //degree conversion
     printf("X:%f\tY:%f\n",x,y);
-    }
+   }
 
   return 0;
 }
