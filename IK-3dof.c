@@ -13,7 +13,7 @@ void interpoints(float *xi,float *yi,float x,float y,float theta,float link) //F
 
 void corrector(float *x,float *y) //if entered point is outside Configuration Space
 {
-        printf("Base Angle:%f Elbow Angle: 180.00 Gamma parameter:%f",atan2f(*y,*x)*180.0/pi,atan2f(*y,*x)*180.0/pi);
+    printf("Base Angle:%f Elbow Angle: 180.00 Gamma parameter:%f",atan2f(*y,*x)*180.0/pi,atan2f(*y,*x)*180.0/pi);//straight line of length link1+link2+link3 to be closest to point outside C-space
 }
 
 int main()
@@ -48,7 +48,7 @@ int main()
     }
    if(v>=-1&&v<=1)
    {
-       printf("\tLINK 3 angles:%f",acosf(v)*180.0/pi);
+       printf("\tLINK 3 angles:%f",(pi-acosf(v))*180.0/pi);
    }
    else{
     printf("INVALID\n");
@@ -58,5 +58,6 @@ int main()
 return 0;
 }
 
-//Correction feature is automatic if the point is outside configuration space.The arm will try to adjust as closest to the point
+//Correction feature is automatic if the point is outside configuration space.The arm will try to adjust as close to the point
+//all angles outputted are with respect to links
 
