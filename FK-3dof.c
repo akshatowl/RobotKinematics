@@ -35,13 +35,14 @@ int main()
         thetai1=theta1+theta2;
        cond++;
     }
-    if(theta2>=180.0)
-    {
-        printf("INVALID\n");
-    }
+  
     else if(theta2>-180.0&&theta2<0.0){
         thetai1=theta1-theta2;
        cond++;
+    }
+     else
+    {
+        printf("INVALID\n");
     }
 
     if(theta3>=0.0&&theta3<180.0)
@@ -49,14 +50,15 @@ int main()
         thetai2=thetai1+theta3;
        cond++;
     }
-    if(theta3>=180.0)
-    {
-        printf("INVALID\n");
-    }
-    else if(theta3>-180.0&&theta3<0.0){
+   else if(theta3>-180.0&&theta3<0.0){
         thetai2=thetai1-theta3;
        cond++;
     }
+    else 
+    {
+        printf("INVALID\n");
+    }
+    
     calc(&x,&y,theta1*pi/180.0,thetai1*pi/180.0,thetai2*pi/180.0,link1,link2,link3);
    if(cond==2)
    {
