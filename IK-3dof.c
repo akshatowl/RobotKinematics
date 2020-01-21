@@ -25,7 +25,14 @@ int main()
     scanf("%f",&gamma);
     printf("Enter the link lengths\n");
     scanf("%f%f%f",&link1,&link2,&link3);
-    interpoints(&xi,&yi,x,y,gamma*pi/180.0,link3);
+   if(sqrtf(x*x+y*y)<=link1+link2+link3)
+   {
+      interpoints(&xi,&yi,x,y,gamma*pi/180.0,link3);
+   }
+   else{
+      corrector(&x,&y);
+      return 0;
+   }
     float slopei=atan2(yi,xi);  //angle made by line joining origin with joint 3 coordinates
     float r=sqrtf(xi*xi+yi*yi); //distance of joint 3 from origin
     float t=(link1*link1+r*r-link2*link2)/(2.0*link1*r);   //cosine rule input equation computed separately
