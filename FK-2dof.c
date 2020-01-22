@@ -7,8 +7,8 @@
 
 void polarxy(float link,float theta,float *a,float *b) //polar coordinates to Cartesian system conversion function
 {
-    *a=link*cosf(theta);
-    *b=link*sinf(theta);
+    *a=link*cosf(theta*pi.180.0);
+    *b=link*sinf(theta*pi/180.0);
 }
 
 void compute(float theta1,float theta2,float *x02,float *y02,float L1,float L2)
