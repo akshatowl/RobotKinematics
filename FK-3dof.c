@@ -5,8 +5,8 @@
 
 void polarxy(float theta,float *x,float *y,float link) //to get cartesian coordinates from angle
 {
-    *x=link*cosf(theta);
-    *y=link*sinf(theta);
+    *x=link*cosf(theta*pi/180.0);
+    *y=link*sinf(theta*pi/180.0);
 
 }
 void calc(float *x03,float *y03,float theta1,float theta2,float theta3,float link1,float link2,float link3)
