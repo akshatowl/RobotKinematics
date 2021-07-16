@@ -21,3 +21,8 @@ Kinematics of Robotic Arm
 
 <h3> Visualization 2-DoF </h3>
 
+
+
+![2-DoF](https://user-images.githubusercontent.com/58850654/125944006-9763b887-c575-44a2-ae3c-848dce26dcdb.png)
+
+
