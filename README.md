@@ -11,7 +11,7 @@ Kinematics of Robotic Arm
 <h3> corrector() </h3>  The corrector function to deal with cases outside the workspace for Inverse Kinematics (3-DoF)
 
 <h3> Visualization 3-DoF </h3>
-![](Images/3-DoF.png)
+❮img src="Images/3-DoF.png" ❯
 
 <h3> Visualization 2-DoF </h3>
 
